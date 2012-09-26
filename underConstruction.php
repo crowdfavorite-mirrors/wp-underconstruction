@@ -3,7 +3,7 @@
  Plugin Name: Under Construction
  Plugin URI: http://www.masseltech.com/
  Description: Makes it so your site can only be accessed by users who log in. Useful for developing a site on a live server, without the world being able to see it
- Version: 1.07
+ Version: 1.08
  Author: Jeremy Massel
  Author URI: http://www.masseltech.com/
  */
@@ -58,7 +58,7 @@ class underConstruction
 	function uc_adminMenu()
 	{
 		/* Register our plugin page */
-		$page = add_options_page('Under Construction Settings', 'Under Construction', 8, $this->mainOptionsPage, array($this, 'uc_changeMessage'));
+		$page = add_options_page('Under Construction Settings', 'Under Construction', 'activate_plugins', $this->mainOptionsPage, array($this, 'uc_changeMessage'));
 
 		/* Using registered $page handle to hook script load */
 		add_action('admin_print_scripts-'.$page, array($this, 'underConstructionEnqueueScripts'));
